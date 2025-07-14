@@ -1,0 +1,13 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>homepage</title>
+    </head>
+    <body>
+        <p>user details</p>
+        <ul>
+            <li th:text="${user.firstname}">firstname</li>
+            <li th:text="${user.lastname}">lastname</li>
+            <li th:text="${user.email}">email</li>
+        </ul>
+    </body>
+</html>
