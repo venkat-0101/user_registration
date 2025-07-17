@@ -2,6 +2,7 @@
     <head>
         <title>homepage</title>
     </head>
+    <head th:replace="/fragments/boot" :: head>
     <body>
         <p>user details</p>
         <ul>
@@ -9,5 +10,6 @@
             <li th:text="${user.lastname}">lastname</li>
             <li th:text="${user.email}">email</li>
         </ul>
+
     </body>
 </html>

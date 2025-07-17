@@ -2,9 +2,7 @@ package com.learning.user_registration.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,9 +49,16 @@ public class RegistrationController {
     
     @GetMapping("/user/{email}")
     public String getMethodName(@PathVariable String email, Model model) throws Exception {
+        try{
         Registration user = registrationService.getUser(email);
         model.addAttribute("user", user);
         return "homepage";
+        }
+        catch(Exception e){
+         model.addAttribute("email", email);
+         return "404_page";
+        }
+        
     }
     
     
